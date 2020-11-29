@@ -24,6 +24,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -150,11 +151,72 @@ header {
     border-bottom: 1px solid white;
 }
 
+div.stamps {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+}
 
+div.stamps img{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+
+}
 
 @keyframes scrollText {
     from   
         { transform: translateX(0%); }
     to 
         { transform: translateX(-50%); }
+}
+
+@media (max-width: 1000px) {
+
+    .home {
+        margin: 120px 0 60px 0;
+    }
+
+    .home-img {
+        margin-top: 60px;
+    }
+
+    .home-img img{
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 460px) {
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .home-img {
+        margin-top: 40px;
+    }
+
+    .home-img img{
+        max-width: 300px;
+    }
+
+    header {
+        top: 20px;
+    }
+
+    #country {
+        padding-left: 20px;
+    }
+
+    #time {
+        padding-right: 20px;
+        text-align: right;
+    }
+
 }
