@@ -2,6 +2,10 @@
     --accent: #fedc20;
 }
 
+::selection {
+    background: var(--accent);
+}
+
 @font-face {
     font-family: 'Pitch';
     src: url("assets/PitchSans-Regular.otf") format("opentype");
@@ -51,12 +55,21 @@ main {
     padding: 50px;
 }
 
-#time {
+header {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
     top: 50px;
-    right: 50px;
+    width: 100%;
 }
 
+#time {
+    padding-right: 50px
+}
+
+#country {
+    padding-left: 50px
+}
 
 .home {
     display: flex;
@@ -88,7 +101,7 @@ main {
     width: 100%;
     height: 40px;
     margin: auto;
-    background-color: #fddc21;
+    background-color: var(--accent);
     overflow: hidden;
     z-index: 1;
 }
