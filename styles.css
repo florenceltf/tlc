@@ -1,0 +1,147 @@
+:root {
+    --accent: #fedc20;
+}
+
+@font-face {
+    font-family: 'Pitch';
+    src: url("assets/PitchSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Pitch Italic';
+    src: url("assets/pitch-sans-test-regular-italic.woff") format("woff");
+}
+
+body {
+    font-family: 'Pitch', Courier, monospace;
+    font-size: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-weight: normal;
+    margin: 0;
+    font-size: 100px;
+}
+
+h1.uppercase {
+    text-transform: uppercase;
+}
+
+h1.lowercase {
+    text-transform: lowercase;
+}
+
+p {
+    margin: 0;
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+main {
+    padding: 50px;
+}
+
+#time {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100%;
+    flex: 1;
+    text-align: center;
+    margin: 25px 50px;
+}
+
+.home-img {
+    position: absolute;
+    min-height: calc(100% - 100px);
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.home-img img {
+    max-width: 600px;
+}
+
+.marquee {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    background-color: #fddc21;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.marquee:hover .marquee-text > div
+{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+}
+
+.marquee-text {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transform: scale(1);
+    transition: all 1s ease;
+}
+
+.marquee-text > div {
+    display: flex;
+    animation: scrollText 40s infinite linear;
+    }
+
+.marquee-text p{
+    margin: 0;
+    font-size: 16px;
+    transition: all 2s ease;
+    }
+
+.marquee-text a {
+    font-family: 'Pitch Italic';
+    border-bottom: 1px solid black;
+}
+    
+
+.marquee-text a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+
+
+@keyframes scrollText {
+    from   
+        { transform: translateX(0%); }
+    to 
+        { transform: translateX(-50%); }
+}
